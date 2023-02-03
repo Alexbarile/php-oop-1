@@ -14,7 +14,7 @@
             $this->protagonista = $_protagonista;
         }
 
-        function getFilm(){
+        public function getFilm(){
             return $this->film;
         }
     }
@@ -38,9 +38,11 @@
 </head>
 <body>
     <div class="container">
-        <div class="row">
-            <div class="col">
-                
+        <div class="row pt-5">
+
+            <!-- PRIMO MOVIE -->
+
+            <div class="col-3">
                 <div class="card" style="width: 18rem;">
                     <img src="..." class="card-img-top" alt="...">
                     <div class="card-body">
@@ -52,13 +54,64 @@
                         <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                     </div>
                     <ul class="list-group list-group-flush">
-                        <li class="list-group-item">An item</li>
-                        <li class="list-group-item">A second item</li>
-                        <li class="list-group-item">A third item</li>
+                        <li class="list-group-item">
+                            <strong>Regista:</strong>
+                            <?php 
+                                echo $movie_1->regista;
+                            ?>
+                        </li>
+                        <li class="list-group-item">
+                            <strong>Anno:</strong>
+                            <?php 
+                                echo $movie_1->anno;
+                            ?>
+                        </li>
+                        <li class="list-group-item">
+                            <strong>Protagonisti:</strong>
+                            <?php 
+                                echo $movie_1->protagonista;
+                            ?>
+                        </li>
                     </ul>
-                    
                 </div>
             </div>
+
+            <!-- SECONDO MOVIE -->
+
+            <div class="col-3">
+                <div class="card" style="width: 18rem;">
+                    <img src="..." class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">
+                            <?php 
+                                echo $movie_2->getFilm();
+                            ?>
+                        </h5>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    </div>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">
+                            <strong>Regista:</strong>
+                            <?php 
+                                echo $movie_2->regista;
+                            ?>
+                        </li>
+                        <li class="list-group-item">
+                            <strong>Anno:</strong>
+                            <?php 
+                                echo $movie_2->anno;
+                            ?>
+                        </li>
+                        <li class="list-group-item">
+                            <strong>Protagonisti:</strong>
+                            <?php 
+                                echo $movie_2->protagonista;
+                            ?>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
         </div>
     </div>
 </body>
