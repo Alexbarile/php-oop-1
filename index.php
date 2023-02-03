@@ -14,8 +14,13 @@
             $this->protagonista = $_protagonista;
         }
 
-
+        function getFilm(){
+            return $this->film;
+        }
     }
+
+    $movie_1 = new Movie('Fast & Furious', 'Justin Lin', '2001', 'Vin Diesel & Paul Walker');
+    $movie_2 = new Movie('Interstellar', 'Christopher Nolan', '2014', 'Matthew McConaughey');
 
 
 
@@ -35,9 +40,24 @@
     <div class="container">
         <div class="row">
             <div class="col">
-                <?php 
                 
-                ?>
+                <div class="card" style="width: 18rem;">
+                    <img src="..." class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">
+                            <?php 
+                                echo $movie_1->getFilm();
+                            ?>
+                        </h5>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    </div>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">An item</li>
+                        <li class="list-group-item">A second item</li>
+                        <li class="list-group-item">A third item</li>
+                    </ul>
+                    
+                </div>
             </div>
         </div>
     </div>
