@@ -2,16 +2,21 @@
 
     class Movie{
 
+        public $path;
         public $film;
         public $regista;
         public $anno;
         public $protagonista;
+        public $more;
 
-        function __construct($_film, $_regista, $_anno, $_protagonista){
+        function __construct($_path, $_film, $_regista, $_anno, $_protagonista, More $_more){
+            $this->path = $_path;
             $this->film = $_film;
             $this->regista = $_regista;
             $this->anno = $_anno;
             $this->protagonista = $_protagonista;
+
+            $this->more = $_more;
         }
 
         public function getFilm(){
@@ -19,8 +24,20 @@
         }
     }
 
-    $movie_1 = new Movie('Fast & Furious', 'Justin Lin', '2001', 'Vin Diesel & Paul Walker');
-    $movie_2 = new Movie('Interstellar', 'Christopher Nolan', '2014', 'Matthew McConaughey');
+    class More{
+
+        public $lingua;
+        public $genere;
+
+        function __construct($_lingua, $_genere){
+            $this->lingua = $_lingua;
+            $this->genere = $_genere;
+
+        }
+    }
+
+    $movie_1 = new Movie('./img/Fast&Furious.jpg','Fast & Furious', 'Justin Lin', '2001', 'Vin Diesel & Paul Walker', new More('Inglese', 'Action'));
+    $movie_2 = new Movie('./img/Interstaellar.jpg','Interstellar', 'Christopher Nolan', '2014', 'Matthew McConaughey', new More('Inglese', 'Fantasy'));
 
 
 
@@ -44,14 +61,13 @@
 
             <div class="col-3">
                 <div class="card" style="width: 18rem;">
-                    <img src="..." class="card-img-top" alt="...">
+                    <img src="<?php echo $movie_1->path; ?>" class="card-img-top" alt="...">
                     <div class="card-body">
                         <h5 class="card-title">
                             <?php 
                                 echo $movie_1->getFilm();
                             ?>
                         </h5>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                     </div>
                     <ul class="list-group list-group-flush">
                         <li class="list-group-item">
@@ -72,6 +88,18 @@
                                 echo $movie_1->protagonista;
                             ?>
                         </li>
+                        <li class="list-group-item">
+                            <strong>Lingua:</strong>
+                            <?php 
+                                echo $movie_1->more->lingua;
+                            ?>
+                        </li>
+                        <li class="list-group-item">
+                            <strong>Genere:</strong>
+                            <?php 
+                                echo $movie_1->more->genere;
+                            ?>
+                        </li>
                     </ul>
                 </div>
             </div>
@@ -80,14 +108,13 @@
 
             <div class="col-3">
                 <div class="card" style="width: 18rem;">
-                    <img src="..." class="card-img-top" alt="...">
+                    <img src="<?php echo $movie_2->path; ?>" class="card-img-top" alt="...">
                     <div class="card-body">
                         <h5 class="card-title">
                             <?php 
                                 echo $movie_2->getFilm();
                             ?>
                         </h5>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                     </div>
                     <ul class="list-group list-group-flush">
                         <li class="list-group-item">
@@ -106,6 +133,18 @@
                             <strong>Protagonisti:</strong>
                             <?php 
                                 echo $movie_2->protagonista;
+                            ?>
+                        </li>
+                        <li class="list-group-item">
+                            <strong>Lingua:</strong>
+                            <?php 
+                                echo $movie_2->more->lingua;
+                            ?>
+                        </li>
+                        <li class="list-group-item">
+                            <strong>Genere:</strong>
+                            <?php 
+                                echo $movie_2->more->genere;
                             ?>
                         </li>
                     </ul>
