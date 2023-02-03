@@ -1,4 +1,23 @@
-<?php 
+<?php
+
+    class Movie{
+
+        public $film;
+        public $regista;
+        public $anno;
+        public $protagonista;
+
+        function __construct($_film, $_regista, $_anno, $_protagonista){
+            $this->film = $_film;
+            $this->regista = $_regista;
+            $this->anno = $_anno;
+            $this->protagonista = $_protagonista;
+        }
+
+
+    }
+
+
 
 ?>
 
