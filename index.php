@@ -1,28 +1,42 @@
 <?php
 
+    // creo la classe MOVIE
+
     class Movie{
+
+        // creo variabili d'istanze
 
         public $path;
         public $film;
+        public $trama;
         public $regista;
         public $anno;
         public $protagonista;
         public $more;
 
-        function __construct($_path, $_film, $_regista, $_anno, $_protagonista, More $_more){
+        // funzione 'construct'
+
+        function __construct($_path, $_film, $_trama, $_regista, $_anno, $_protagonista, More $_more){
             $this->path = $_path;
             $this->film = $_film;
+            $this->trama = $_trama;
             $this->regista = $_regista;
             $this->anno = $_anno;
             $this->protagonista = $_protagonista;
 
+            // variabile d'istanza della nuova classe MORE
+
             $this->more = $_more;
         }
+
+        // metodo GET
 
         public function getFilm(){
             return $this->film;
         }
     }
+
+    // nuova classe MORE
 
     class More{
 
@@ -32,14 +46,13 @@
         function __construct($_lingua, $_genere){
             $this->lingua = $_lingua;
             $this->genere = $_genere;
-
         }
     }
 
-    $movie_1 = new Movie('./img/Fast&Furious.jpg','Fast & Furious', 'Justin Lin', '2001', 'Vin Diesel & Paul Walker', new More('Inglese', 'Action'));
-    $movie_2 = new Movie('./img/Interstaellar.jpg','Interstellar', 'Christopher Nolan', '2014', 'Matthew McConaughey', new More('Inglese', 'Fantasy'));
+    // OGGETTI MOVIE_1 / MOVIE_2
 
-
+    $movie_1 = new Movie('./img/Fast&Furious.jpg','Fast & Furious','Per indagare su una serie di furti, il poliziotto Brian O"Connor diventa un infiltrato sotto copertura nel mondo delle corse clandestine di Los Angeles. Mentre cerca di guadagnarsi la fiducia del capo, l"uomo rischia di essere smascherato.', 'Justin Lin', '2001', 'Vin Diesel & Paul Walker', new More('Inglese', 'Action'));
+    $movie_2 = new Movie('./img/Interstaellar.jpg','Interstellar','In un futuro non precisato, un drastico cambiamento climatico colpisce duramente l"agricoltura. Il granturco è l"unica coltivazione ancora in grado di crescere ed un gruppo di scienziati è intenzionato ad attraversare lo spazio per trovare nuovi luoghi adatti a coltivarlo.', 'Christopher Nolan', '2014', 'Matthew McConaughey', new More('Inglese', 'Fantasy'));
 
 ?>
 
@@ -68,6 +81,11 @@
                                 echo $movie_1->getFilm();
                             ?>
                         </h5>
+                        <p>
+                            <?php 
+                                echo $movie_1->trama;
+                            ?>
+                        </p>
                     </div>
                     <ul class="list-group list-group-flush">
                         <li class="list-group-item">
@@ -115,6 +133,11 @@
                                 echo $movie_2->getFilm();
                             ?>
                         </h5>
+                        <p>
+                            <?php 
+                                echo $movie_2->trama;
+                            ?>
+                        </p>
                     </div>
                     <ul class="list-group list-group-flush">
                         <li class="list-group-item">
