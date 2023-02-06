@@ -33,6 +33,10 @@
 
         public function getFilm(){
             return $this->film;
+
+            // anche così 
+
+            // return $this->film." - ".return $this->anno;
         }
     }
 
